@@ -1,19 +1,9 @@
 
 <% @songs.each do |p| %>
   <li><%= p.artist.name%> - <%=p.title%></li>
- <li> <%= p.song_count %> songs</li>
 <% end %>
 
 
 
 
 
-it "lists songs in 'Artist Name - Song Title' format" do
-    visit songs_path
-    expect(page).to have_link("Daft Punk - The Grid", href: song_path(@song))
-  end
-
-  it "links to the artist" do
-    visit song_path(@song)
-    expect(page).to have_link("Daft Punk", href: artist_path(@artist))
-  end
